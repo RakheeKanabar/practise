@@ -1,0 +1,73 @@
+﻿@model StaffMVC.Models.Staff
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Staff</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeTel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileTel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StaffId }) |
+    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Add a Review","Create","Reviews", new { id= Model.StaffId}, null)
+</p>
+@foreach (var review in ViewBag.Reviews)
+{
+   <p>Review:@review.Description  </p >
+   <p>Rating:@review.Rate</p>
+
+}
